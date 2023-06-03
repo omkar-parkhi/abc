@@ -1,0 +1,35 @@
+.hero-text p{
+    font-size:0.9rem;
+}
+.complex-design{
+    width:100%;
+}
+.ratings{
+    width:100%;
+    margin-left:10%;
+    margin-top:20px;
+}
+.calender,.duration{
+    width:100%;
+}
+.spotlight{
+    width:100%;
+}
+@media (min-width:768px){
+    .hero-text p{
+        font-size:1.1rem;
+    }
+    .call-rating{
+        justify-content: space-between;
+    }
+    .complex-design{
+        width:50%;
+    }
+    .ratings{
+        width:40%;
+        margin:0;
+    }
+    .calender,.duration{
+        width:40%;
+    }
+}
