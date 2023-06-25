@@ -15,8 +15,15 @@
 .spotlight{
     width:100%;
 }
-
+@media (min-width:480px){
+    .spotlight{
+        width:80%;
+    }
+}
 @media (max-width:768px){
+    .spotlight{
+        width:60%;
+    }
     .yellow-arrow{
         clip-path: polygon(0% 0%, 75% 0%, 90% 49%, 75% 100%, 0% 100%);
     }
@@ -38,5 +45,10 @@
     }
     .calender,.duration{
         width:40%;
+    }
+}
+@media (min-width:992px){
+    .spotlight{
+        width:60%;
     }
 }
