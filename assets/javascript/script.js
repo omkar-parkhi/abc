@@ -239,6 +239,43 @@ $(document).ready(function () {
       }
   });
 
+  function addBoxShadowOnScroll() {
+    var element = $('.showsubnav-mobile');
+    var elementTop = element.offset().top - 30; // Subtract 30px for the margin
+    var elementHeight = element.height();
+    var windowHeight = $(window).height();
+    var scrollPosition = $(window).scrollTop();
+
+    // Calculate the bottom position of the element
+    var elementBottom = elementTop + elementHeight;
+
+    // Calculate the bottom position of the viewport
+    var viewportBottom = scrollPosition + windowHeight;
+
+    console.log(scrollPosition>elementTop);
+    console.log(viewportBottom < elementBottom);
+    if (scrollPosition > elementTop) {
+      element.addClass('box-shadow');
+      // alert("In true"+elementTop);
+      // alert(viewpostBottom);
+
+    } else {
+      element.removeClass('box-shadow');
+      // alert("Hello");
+      // alert(elementTop);
+      // alert(viewpostBottom);
+    }
+  }
+
+  // Call the function on page load and on scroll
+  $(window).on('load scroll', function() {
+    addBoxShadowOnScroll();
+  });
+
+
+
+
+
 
 
   var $anchors = $('.sub-nav-submobile ul li a');
@@ -287,6 +324,7 @@ $('#second-nav ul li a').each(function() {
   var targetBottom = targetTop + target.outerHeight();
 
   if (scrollPos >= targetTop && scrollPos < targetBottom) {
+
     $(this).addClass('active').parent().siblings().find('a').removeClass('active'); // Add active class to current anchor and remove from siblings
     $('.btn-content').text($(this).text()); // Update the button text with the active anchor's text
     return false; // Exit the loop once the active anchor is found
@@ -294,12 +332,8 @@ $('#second-nav ul li a').each(function() {
 });
 var totalHeight=scrollPos+$(window).height()
 if (totalHeight >= footerTop) {
-    // alert('Hii');
-    console.log(true);
-    // console.log(footerTop);
     $('.mobile-scroll-holder').css("display","none");
   } else {
-    console.log(false);
 
     $('.mobile-scroll-holder').css("display","block");
   }
@@ -352,4 +386,3 @@ $('.show-hide-toggle').each(function() {
 
 
 });
-

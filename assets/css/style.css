@@ -13,6 +13,17 @@
     --h3-font-size:22px;
     --h2-font-size:24px;
 }
+.accordion-button::before,
+.accordion-button::after {
+    width:15px;
+    height:15px;
+    background-size:15px;
+}
+
+/* Adjust the color of the arrow */
+.accordion-button:not(.collapsed)::after {
+  color: var(--color2);
+}
 .show-hide-toggle {
     height: 400px;
     overflow: hidden;
@@ -20,13 +31,23 @@
 }
 
 .show-more{
+    font-size:14px;
     color:var(--primary);
     display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    height:20px;
     box-shadow:0px -26px 58px 29px #fff;
     position:relative;
     z-index:2;
     margin:20px 0 40px 0;
     cursor:pointer;
+    font-weight:500;
+}
+.show-more i{
+    padding-top:3px;
+    margin-left:5px;
+    font-size:12px;
 }
 .hide-box-shadow{
     box-shadow:none;
@@ -275,9 +296,9 @@ h5{
     margin:0 auto;
     margin-bottom:20px;
 }
-.key-grey{
+/* .key-grey{
     background:lightgrey;
-}
+} */
 .key-grey h4{
     font-size:1rem !important;
     font-weight:600;
@@ -535,6 +556,7 @@ address p {
     border-radius:50%;
     margin-top:30px;
 }
+
 .showsubnav-mobile{
     width:90%;
     height:60px;
@@ -547,7 +569,6 @@ address p {
     align-items:center;
     padding:0 10px;
     margin:30px auto;
-    box-shadow:-10px -30px 0px 30px #fff;
 }  
 .mobile-scroll-holder{
     position: sticky;
@@ -555,6 +576,10 @@ address p {
     left:0;
     z-index:4;
     background:var(--color4);
+    transition: box-shadow 0.3s ease;
+}
+.box-shadow{
+    box-shadow:-10px -30px 0px 30px #fff;
 } 
 .rotate {
     transform: rotate(180deg);
@@ -621,4 +646,43 @@ address p {
   }
   .low-device-place-link:hover{
     box-shadow: 0px 0px 0px 5px rgba(252, 217, 0, 0.4);
+  }
+  .social-loc{
+    width:300px;
+    gap:20px;
+  }
+  .social-loc a{
+    width:45px;
+    height:45px;
+    border:3px solid var(--text-color);
+    color:var(--text-color);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-decoration: none;
+    font-size:1.1rem;
+    border-radius:50%;
+    transition:0.2s;
+  }
+  .social-loc a:hover{
+    background:var(--color2);
+    color:var(--color4);
+  }
+  .nearby-locations{
+    gap:10px;
+  }
+  .nearby-locations span{
+    margin:10px 0;
+  }
+  .course-links a{
+    display: flex;
+    margin:7px 0;
+    color:var(--color2);
+    text-decoration: none;
+  }
+  .course-links a:hover{
+    color:var(--text-color);
+  }
+  .model img{
+    height:100% !important;
   }
